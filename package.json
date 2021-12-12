@@ -1,0 +1,8 @@
+{
+  "name": "merry-christmas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Rootjang92/merry-christmas.git",
+  "author": "Geunho Jang <39117502+Rootjang92@users.noreply.github.com>",
+  "license": "MIT"
+}
