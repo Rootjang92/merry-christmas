@@ -9,7 +9,14 @@
   </head>
   <body>
     <div id="container">
-      <h1>Merry Christmas</h1>
+      <div id="xmas-container">
+        <div id="typing">Merry Christmas</div>
+      </div>
+      <div id="message">
+        <div>당신의 2021년은 어땠나요?</div>
+        <div>2022년도 올해처럼 밝게 빛날거예요.</div>
+        <div>항상 당신의 행복을 응원할게요!</div>
+      </div>
       <canvas></canvas>
       <div id="santa">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="350" height="400">
@@ -115,7 +122,32 @@
           </g>
         </svg>
       </div>
+      <figcaption>Joy to the World (Jazz) - E's Jammy Jams</figcaption>
+      <audio id="carol" controls src="/assets/joy-to-the-world.mp4" autoplay></audio>
     </div>
   </body>
   <script src="index.js"></script>
+  <script>
+    const audio = document.getElementById('carol');
+    audio.volume = 0.2;
+    let isPlaying = true;
+
+    audio.onplaying = () => {
+      isPlaying = true;
+    };
+
+    audio.onpause = () => {
+      isPlaying = false;
+    };
+
+    function togglePlay() {
+      return audio.paused ? audio.play() : audio.pause();
+    }
+
+    window.addEventListener('click', togglePlay);
+    window.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      togglePlay();
+    });
+  </script>
 </html>

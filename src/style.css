@@ -19,13 +19,60 @@ html {
   height: 100%;
 }
 
-h1 {
+#xmas-container {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+#typing {
   text-align: center;
   text-transform: uppercase;
   text-shadow: 0px 0px 50px rgba(#ffffff, 0.5);
   color: #ffffff;
   z-index: 10;
   opacity: 0.9;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 2rem;
+  font-family: 'Trebuchet MS' sans-serif;
+  width: 0;
+  animation: typing 3s infinite;
+}
+
+#message {
+  margin-top: 20px;
+  color: #ffffff;
+  text-align: center;
+  white-space: inherit;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+}
+
+#message div {
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#message div:nth-child(1) {
+  width: 0;
+  -webkit-animation: type 2s forwards;
+  animation: type 2s forwards;
+  animation-delay: 3s;
+}
+
+#message div:nth-child(2) {
+  width: 0;
+  -webkit-animation: type 2s forwards;
+  animation: type 2s forwards;
+  animation-delay: 5s;
+}
+
+#message div:nth-child(3) {
+  width: 0;
+  -webkit-animation: type 2s forwards;
+  animation: type 2s forwards;
+  animation-delay: 7s;
 }
 
 canvas {
@@ -74,6 +121,54 @@ canvas {
   transform-origin: 50% 54%;
 }
 
+figcaption {
+  color: #ffffff;
+}
+
+#carol {
+  display: none;
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes type {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
 @-webkit-keyframes float {
   50% {
     -webkit-transform: translateY(25px);
@@ -94,18 +189,21 @@ canvas {
     transform: rotateX(360deg);
   }
 }
+
 @keyframes spin {
   100% {
     -webkit-transform: rotateX(360deg);
     transform: rotateX(360deg);
   }
 }
+
 @-webkit-keyframes wave {
   50% {
     -webkit-transform: rotate(-10deg);
     transform: rotate(-10deg);
   }
 }
+
 @keyframes wave {
   50% {
     -webkit-transform: rotate(-10deg);

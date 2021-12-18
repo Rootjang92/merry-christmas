@@ -1,4 +1,6 @@
-'use strict';
+/* eslint-disable no-use-before-define */
+/* eslint-disable one-var */
+/* eslint-disable no-multi-assign */
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
@@ -61,7 +63,7 @@ class Snowflake {
 
     this.x += this.xVel * elapsed;
     this.y += this.yVel * elapsed;
-    this.angle += this.xVel * 0.05 * elapsed; //this.angleVel * elapsed
+    this.angle += this.xVel * 0.05 * elapsed; // this.angleVel * elapsed
 
     if (this.y - this.size > height || this.x + this.size < 0 || this.x - this.size > width) {
       this.spawn();
